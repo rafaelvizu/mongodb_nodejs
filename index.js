@@ -30,7 +30,7 @@ app.post('/pessoas/cadastro/confirm', async (req, res) => {
     let nome = req.body.nome;
     nome = nome.trim();
 
-    if (nome.length > 0 && nome.length <= 20) {
+    if (nome.length > 0 && nome.length <= 13) {
         await new Pessoa({nome}).save()
         .then(data => {
             res.redirect(`/pessoas/${data._id}`);
@@ -52,7 +52,9 @@ app.post('/pessoas/editar/confirm', async (req, res) => {
     let {_id, nome} = req.body;
     nome = nome.trim();
 
-    if (nome.length > 1 && nome.length <= 20) {
+    console.log(nome.length);
+
+    if (nome.length > 1 && nome.length <= 13) {
         await Pessoa.updateOne({_id}, {nome})
         .then(() => {
             res.redirect(`/pessoas/${_id}`);
