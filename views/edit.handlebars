@@ -1,0 +1,11 @@
+<div>
+     {{#with pessoas}}
+          <form action="/pessoas/editar/confirm" method="post" class="formulario">
+               <input type="hidden" name="_id" value="{{_id}}">
+               <label for="nome">Nome</label>
+               <input type="text" name="nome" id="nome" placeholder="Digite o nome" value="{{nome}}" required maxlength="20" minlength="2">
+
+               <input type="submit" value="Confirmar">
+          </form>
+     {{/with}}
+</div>

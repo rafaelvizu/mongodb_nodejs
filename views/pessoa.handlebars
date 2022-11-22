@@ -1,0 +1,13 @@
+<div class="pessoa-container">
+     {{#with pessoas}}
+          <article id="{{_id}}">
+               <h2>{{nome}}</h2>
+
+               <a href="/pessoas/editar/{{_id}}">editar</a>
+               
+               <form action="/pessoas/exluir/{{_id}}" method="post" class="form-del">
+                    <input type="submit" value="Excluir">
+               </form>
+          </article>
+     {{/with}}
+</div>

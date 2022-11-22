@@ -1,0 +1,8 @@
+<div class="home-container">
+     {{#each pessoas}}
+          <article id="{{this._id}}">
+               <h2>{{this.nome}}</h2>
+               <a href="/pessoas/{{this._id}}">ver</a>
+          </article>
+     {{/each}}
+</div>
