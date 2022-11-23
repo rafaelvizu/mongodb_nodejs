@@ -51,7 +51,7 @@ app.get('/pessoas/cadastrar', (req, res) => {
 
 app.post('/pessoas/editar/confirm', async (req, res) => {
     let {_id, nome} = req.body;
-    nome = toString(nome).trim();
+    nome = nome || '';
 
     if (nome.length > 1 && nome.length <= 13) {
         await Pessoa.updateOne({_id}, {nome})
