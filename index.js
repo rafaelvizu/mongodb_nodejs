@@ -27,8 +27,9 @@ app.use(express.urlencoded({
 app.use(express.static('./public'));
 
 app.post('/pessoas/cadastro/confirm', async (req, res) => {
-    let nome = req.body.nome;
-    nome = nome.trim();
+    let nome = req.body.nome || '';
+
+    nome = nome.trim(); 
 
     if (nome.length > 0 && nome.length <= 13) {
         await new Pessoa({nome}).save()
@@ -50,9 +51,7 @@ app.get('/pessoas/cadastrar', (req, res) => {
 
 app.post('/pessoas/editar/confirm', async (req, res) => {
     let {_id, nome} = req.body;
-    nome = nome.trim();
-
-    console.log(nome.length);
+    nome = toString(nome).trim();
 
     if (nome.length > 1 && nome.length <= 13) {
         await Pessoa.updateOne({_id}, {nome})

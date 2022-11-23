@@ -61,10 +61,12 @@ footer > a:hover {
 }
 
 .home-container {
-     width: 50vw;
+     width: 100vw;
      display: flex;
      flex-wrap: wrap;
      justify-content: center;
+     padding: 0px 20px;
+
 }
 
 article {
@@ -136,4 +138,5 @@ article > a:hover {
           width: 90vw;
           height: 90vw;
      }
+
 }
