@@ -134,5 +134,6 @@ article > a:hover {
      }
      article {
           width: 90vw;
+          height: 90vw;
      }
 }
