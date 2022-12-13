@@ -121,6 +121,6 @@ app.get('/', async (req, res) => {
 
 
 
-app.listen(PORT, () => {
+app.listen(PORT || 4000, () => {
     console.log(`Server listening on port ${PORT}`);
 });
