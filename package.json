@@ -15,7 +15,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon api/index.js",
-    "start": "node api/index.js"
+    "start": "node ."
   },
   "keywords": [],
   "author": "",
