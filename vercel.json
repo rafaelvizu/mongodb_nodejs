@@ -1,0 +1,16 @@
+{
+     "name": "mongodb_nodejs",
+     "version":  2,
+     "public": true,
+     "build": {
+          "src": "./api/index.js",
+          "use": "@versel/node"
+     },
+
+     "routes": [
+          {
+               "src": "/api/(.*)",
+               "dest": "/api/index.js"
+          }
+     ]
+}
