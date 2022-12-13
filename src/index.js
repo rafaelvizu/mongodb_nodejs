@@ -6,7 +6,7 @@ import Pessoa from './models/pessoa.js'
 
 const app = express();
 const hbs = exphbs.create({
-    partialsDir: ['./views/partials'],
+    partialsDir: ['./src/views/partials'],
     runtimeOptions: {
         allowProtoMethodsByDefault: true,
         allowProtoPropertiesByDefault: true,
@@ -18,13 +18,13 @@ const PORT = process.env.PORT
 app.engine('handlebars', hbs.engine);
 
 app.set('view engine', 'handlebars');
-app.set('views', './views');
+app.set('views', './src/views');
 
 app.use(express.json());
 app.use(express.urlencoded({
     extended: true,
 }));
-app.use(express.static('./public'));
+app.use(express.static('./src/public'));
 
 app.post('/pessoas/cadastro/confirm', async (req, res) => {
     let nome = req.body.nome || '';
